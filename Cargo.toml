@@ -1,0 +1,28 @@
+[package]
+name = "digital_certificate"
+version = "0.1.0"
+authors = ["[your_name] <[your_email]>"]
+edition = "2021"
+
+[dependencies]
+ink = { version = "4.0.1", default-features = false }
+# ink_env = { version = "4.0.1", deafault-features = false }
+scale = { package = "parity-scale-codec", version = "3", default-features = false, features = ["derive"] }
+scale-info = { version = "2.3", default-features = false, features = ["derive"], optional = true }
+# ink-experimental-engine = ["ink_env/ink-experimental-engine"]
+# ink-engine = { version = "0.0.0", deafult-features = false }
+[dev-dependencies]
+ink_e2e = "4.0.1"
+
+[lib]
+path = "lib.rs"
+
+[features]
+default = ["std"]
+std = [
+    "ink/std",
+    "scale/std",
+    "scale-info/std",
+]
+ink-as-dependency = []
+e2e-tests = []
